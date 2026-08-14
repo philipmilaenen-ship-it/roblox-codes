@@ -1,0 +1,147 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #08090d;
+    color: white;
+}
+
+/* NAVBAR */
+
+nav {
+    height: 70px;
+    background: #11131a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+    border-bottom: 1px solid #242832;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #00ff88;
+}
+
+nav a {
+    color: #aaa;
+    text-decoration: none;
+    margin-left: 25px;
+}
+
+nav a:hover {
+    color: #00ff88;
+}
+
+/* HERO */
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: radial-gradient(circle, #123d2a, #08090d 65%);
+}
+
+.hero h1 {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.hero h1 span {
+    color: #00ff88;
+}
+
+.hero p {
+    color: #999;
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+/* SEARCH */
+
+.search {
+    display: flex;
+    max-width: 650px;
+    margin: auto;
+}
+
+.search input {
+    flex: 1;
+    padding: 18px;
+    background: #151820;
+    border: 1px solid #303641;
+    color: white;
+    outline: none;
+    font-size: 16px;
+}
+
+.search button {
+    padding: 0 25px;
+    background: #00ff88;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* GAMES */
+
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 60px auto;
+}
+
+.title {
+    margin-bottom: 25px;
+}
+
+.games {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.game {
+    background: #13161d;
+    border: 1px solid #252a34;
+    border-radius: 15px;
+    padding: 25px;
+    transition: 0.2s;
+}
+
+.game:hover {
+    transform: translateY(-5px);
+    border-color: #00ff88;
+}
+
+.icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.game p {
+    color: #888;
+    margin-top: 10px;
+}
+
+.active {
+    color: #00ff88;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 35px;
+    background: #11131a;
+    color: #666;
+}

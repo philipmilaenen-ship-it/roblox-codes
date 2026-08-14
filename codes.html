@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tous les codes - RobloxCodes</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        .codes-search {
+            width: 100%;
+            max-width: 650px;
+            margin: 30px auto;
+            display: flex;
+        }
+
+        .codes-search input {
+            flex: 1;
+            padding: 17px;
+            background: #151820;
+            border: 1px solid #303641;
+            color: white;
+            outline: none;
+            font-size: 16px;
+            border-radius: 10px;
+        }
+
+        .codes-list {
+            display: grid;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .code {
+            background: #13161d;
+            border: 1px solid #252a34;
+            border-radius: 12px;
+            padding: 20px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .game-name {
+            color: #aaa;
+            font-size: 14px;
+            margin-bottom: 7px;
+        }
+
+        .code-name {
+            color: #00ff88;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .reward {
+            color: #888;
+            margin-top: 5px;
+        }
+
+        .copy {
+            background: #00ff88;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .copy:hover {
+            transform: scale(1.05);
+        }
+
+        .back {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: #00ff88;
+            text-decoration: none;
+        }
+
+        .no-results {
+            display: none;
+            text-align: center;
+            color: #777;
+            padding: 30px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="logo">
+        Roblox<span>Codes</span>
+    </div>
+
+
+    <div>
+
+        <a href="index.html">
+            Accueil
+        </a>
+
+        <a href="index.html#games">
+            Jeux
+        </a>
+
+        <a href="codes.html">
+            Codes actifs
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- CONTENU -->
+
+<main class="container">
+
+
+    <a class="back" href="index.html">
+        ← Retour
+    </a>
+
+
+    <h1>
+        🔥 Tous les codes actifs
+    </h1>
+
+
+    <p style="color:#888; margin-top:10px;">
+        Recherche un jeu ou un code.
+    </p>
+
+
+
+    <!-- RECHERCHE -->
+
+    <div class="codes-search">
+
+        <input
+            type="text"
+            id="codeSearch"
+            placeholder="🔎 Rechercher un jeu ou un code..."
+        >
+
+    </div>
+
+
+
+    <!-- CODES -->
+
+    <div class="codes-list" id="codesList">
+
+
+        <!-- BLOX FRUITS -->
+
+        <div class="code">
+
+            <div>
+
+                <div class="game-name">
+                    🍎 Blox Fruits
+                </div>
+
+                <div class="code-name">
+                    EXAMPLECODE
+                </div>
+
+                <div class="reward">
+                    🎁 Exemple de récompense
+                </div>
+
+            </div>
+
+
+            <button
+                class="copy"
+                onclick="copyCode('EXAMPLECODE')">
+
+                Copier
+
+            </button>
+
+        </div>
+
+
+
+        <!-- RIVALS -->
+
+        <div class="code">
+
+            <div>
+
+                <div class="game-name">
+                    🔫 RIVALS
+                </div>
+
+                <div class="code-name">
+                    EXAMPLERIVALS
+                </div>
+
+                <div class="reward">
+                    🎁 Exemple de récompense
+                </div>
+
+            </div>
+
+
+            <button
+                class="copy"
+                onclick="copyCode('EXAMPLERIVALS')">
+
+                Copier
+
+            </button>
+
+        </div>
+
+
+
+        <!-- KING LEGACY -->
+
+        <div class="code">
+
+            <div>
+
+                <div class="game-name">
+                    🏝️ King Legacy
+                </div>
+
+                <div class="code-name">
+                    EXAMPLEKING
+                </div>
+
+                <div class="reward">
+                    💎 Exemple de récompense
+                </div>
+
+            </div>
+
+
+            <button
+                class="copy"
+                onclick="copyCode('EXAMPLEKING')">
+
+                Copier
+
+            </button>
+
+        </div>
+
+
+
+        <!-- ANIME FIGHTERS -->
+
+        <div class="code">
+
+            <div>
+
+                <div class="game-name">
+                    ⚔️ Anime Fighters
+                </div>
+
+                <div class="code-name">
+                    EXAMPLEANIME
+                </div>
+
+                <div class="reward">
+                    🎁 Exemple de récompense
+                </div>
+
+            </div>
+
+
+            <button
+                class="copy"
+                onclick="copyCode('EXAMPLEANIME')">
+
+                Copier
+
+            </button>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="no-results" id="noResults">
+        😕 Aucun code trouvé.
+    </div>
+
+
+</main>
+
+
+
+<footer>
+
+    © 2026 RobloxCodes
+
+</footer>
+
+
+
+<script>
+
+const searchInput = document.getElementById("codeSearch");
+
+const codeCards = document.querySelectorAll(".code");
+
+const noResults = document.getElementById("noResults");
+
+
+searchInput.addEventListener("input", function () {
+
+    const search = searchInput.value.toLowerCase().trim();
+
+    let found = 0;
+
+
+    codeCards.forEach(function (card) {
+
+        const gameName =
+            card.querySelector(".game-name")
+            .textContent
+            .toLowerCase();
+
+        const codeName =
+            card.querySelector(".code-name")
+            .textContent
+            .toLowerCase();
+
+
+        if (
+            gameName.includes(search) ||
+            codeName.includes(search)
+        ) {
+
+            card.style.display = "flex";
+
+            found++;
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+
+    if (found === 0) {
+
+        noResults.style.display = "block";
+
+    } else {
+
+        noResults.style.display = "none";
+
+    }
+
+});
+
+
+
+function copyCode(code) {
+
+    navigator.clipboard.writeText(code);
+
+    alert("Code copié : " + code);
+
+}
+
+</script>
+
+
+</body>
+
+</html>
